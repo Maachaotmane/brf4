@@ -1,0 +1,67 @@
+CREATE Database students;
+
+-- Table structure for table `admins`--
+
+CREATE TABLE `admins` (
+  `idadm` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`idadm`)
+);
+
+-- Table structure for table `staff`--
+
+CREATE TABLE `staff` (
+  `idstf` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `idadm` int(11) NOT NULL,
+  PRIMARY KEY (`idstf`)
+);
+
+-- Table structure for table `students`--
+
+CREATE TABLE `students` (
+  `idstd` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `idstf` int(11) NOT NULL,
+  `idadm` int(11) NOT NULL,
+  PRIMARY KEY (`idstd`)
+);
+
+-- Table structure for table `users`--
+
+CREATE TABLE `users` (
+  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) DEFAULT NULL,
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `POSITION` varchar(15) DEFAULT NULL,
+  `staffId` int(11) DEFAULT NULL,
+  `adminsId` int(11) DEFAULT NULL,
+  `srtudentId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`userId`),
+);
+
+-- Dumping data for table `staff`
+
+INSERT INTO `staff` (`idstf`, `full_name`, `email`, `idadm`) VALUES
+(1, 'amine', 'ilai@gmail.com', 0),
+(2, 'tesg', 'hsgsgsg', 0),
+(3, 'phone', 'amine.es.sobhi7@gmail.com', 0);
+
+-- Dumping data for table `users`
+
+INSERT INTO `users` (`userId`, `user_name`, `PASSWORD`, `POSITION`, `staffId`, `adminsId`, `srtudentId`) VALUES
+(3, 'ssssss', 'aaaaaaaaaaaa', 'admin', 100, 21, 1444);
+
+-- Update staff id=1 --
+
+UPDATE staff SET full_name = 'otmane', email = 'maacha@fd.com' WHERE staff.idstf = 1";
+
+ALTER TABLE users
+ADD idstd int;
+ALTER TABLE users ADD CONSTRAINT student_foreign FOREIGN KEY (idstd) REFERENCES students(idstd);
+
+SELECT * from students inner JOIN users on students.idstd = users.userId WHERE users.userId = 1
+
