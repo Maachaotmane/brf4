@@ -1,0 +1,105 @@
+$textcolor: black;
+
+/* Modal Content */
+.block1 {
+	margin-top: -20px;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 90px;
+
+	h2 {
+		padding-top: 20px;
+		color: $textcolor;
+	}
+}
+
+#form {
+	text-align: center;
+	margin: auto;
+	width: 100%;
+}
+
+textarea {
+	color: $textcolor;
+	padding-left: 1.6%;
+	border: 3px solid $textcolor;
+	width: 40%;
+	border-radius: 4px;
+	box-sizing: content-box;
+	height: 30px;
+	margin-top: 3%;
+	width: 84.3%;
+	height: auto;
+}
+
+#Envoyer {
+	color: white;
+	background-color: $readmore;
+	width: 20%;
+	margin-right: 40%;
+	margin-left: 40%;
+	margin-bottom: 5px;
+	border-radius: 20px;
+}
+
+#effacer {
+	background-color: $nav-fot;
+	color: white;
+	width: 10%;
+	height: 30px;
+	margin-right: 40%;
+	margin-left: 40%;
+	margin-bottom: 5px;
+	border-radius: 20px;
+	padding-bottom: 25px;
+}
+
+label {
+	display: inline-block;
+	margin: 10px;
+}
+
+p {
+	display: inline-block;
+	margin: 10px;
+}
+
+@media screen and (max-width:700px) {
+	#name {
+		width: 80%;
+		border-radius: 4px;
+		height: 30px;
+		margin: 1%;
+	}
+
+	#mail {
+		padding-left: 1.6%;
+		width: 80%;
+		border-radius: 4px;
+		height: 30px;
+		margin: 1%;
+	}
+
+	#objet {
+		padding-left: 1.6%;
+		width: 80%;
+		border-radius: 4px;
+		height: 30px;
+		margin: 1%;
+	}
+
+	textarea {
+		width: 80%;
+	}
+
+	#Envoyer {
+		margin: 0%;
+		width: 50%;
+	}
+
+	#effacer {
+		width: 30%;
+		margin: 0%;
+		padding-bottom: 7%;
+	}
+}
